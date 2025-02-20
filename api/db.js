@@ -1,3 +1,5 @@
+require('dotenv').config(); // Cargar variables de entorno
+
 const { Pool } = require('pg');
 
 const pool = new Pool({
