@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('gaseosaForm');
     const gaseosasList = document.getElementById('gaseosasItems');
-    const API_URL = 'http://localhost:3000';
+    const API_URL = 'https://<tu-proyecto>.vercel.app/api'; // Asegúrate de reemplazar <tu-proyecto> con el nombre de tu proyecto en Vercel
     const saborSelect = document.getElementById('sabor');
     const cantidadInput = document.getElementById('cantidad');
     const valorTotalInput = document.getElementById('valorTotal');
