@@ -14,24 +14,30 @@ app.use(bodyParser.json());
 async function crearTabla() {
     try {
         await pool.query(`
-      CREATE TABLE IF NOT EXISTS personas (
-        id SERIAL PRIMARY KEY,
-        nombre VARCHAR(100) NOT NULL UNIQUE
-      );
-      CREATE TABLE IF NOT EXISTS gaseosas (
-        id SERIAL PRIMARY KEY,
-        fechaVenta TIMESTAMP DEFAULT NOW(),
-        sabor VARCHAR(100) NOT NULL,
-        cantidad INT NOT NULL CHECK (cantidad > 0),
-        valorTotal DECIMAL(10,2) NOT NULL CHECK (valorTotal >= 0),
-        estado VARCHAR(50) NOT NULL,
-        modoPago VARCHAR(50) NOT NULL,
-        size VARCHAR(50) NOT NULL,
-        persona_id INT REFERENCES personas(id) /* Foreign key for person */
-      );
-      ALTER TABLE personas ADD CONSTRAINT unique_nombre UNIQUE (nombre);
-      ALTER TABLE gaseosas ADD COLUMN IF NOT EXISTS persona_id INT REFERENCES personas(id);
-    `);
+             CREATE TABLE IF NOT EXISTS personas (
+                id SERIAL PRIMARY KEY,
+                nombre VARCHAR(100) NOT NULL UNIQUE
+            );
+            CREATE TABLE IF NOT EXISTS gaseosas (
+                id SERIAL PRIMARY KEY,
+                fechaVenta TIMESTAMP DEFAULT NOW(),
+                sabor VARCHAR(100) NOT NULL,
+                cantidad INT NOT NULL CHECK (cantidad > 0),
+                valorTotal DECIMAL(10,2) NOT NULL CHECK (valorTotal >= 0),
+                estado VARCHAR(50) NOT NULL,
+                modoPago VARCHAR(50) NOT NULL,
+                size VARCHAR(50) NOT NULL,
+                persona_id INT REFERENCES personas(id)
+            );
+            DO $$
+            BEGIN
+                IF NOT EXISTS (SELECT 1 FROM pg_constraint WHERE conname = 'unique_nombre') THEN
+                    ALTER TABLE personas ADD CONSTRAINT unique_nombre UNIQUE (nombre);
+                END IF;
+            END
+            $$;
+            ALTER TABLE gaseosas ADD COLUMN IF NOT EXISTS persona_id INT REFERENCES personas(id);
+        `);
         console.log("✅ Tablas 'gaseosas' y 'personas' aseguradas");
     } catch (err) {
         console.error("❌ Error al crear las tablas", err);
@@ -57,10 +63,18 @@ app.post('/registro', async (req, res) => {
         let personaId = null;
         if (personaNombre) {
             const personaResult = await pool.query(
-                `INSERT INTO personas (nombre) VALUES ($1) RETURNING id`,
+                `INSERT INTO personas (nombre) VALUES ($1) ON CONFLICT (nombre) DO NOTHING RETURNING id`,
                 [personaNombre]
             );
-            personaId = personaResult.rows[0].id;
+            if (personaResult.rows.length > 0) {
+                personaId = personaResult.rows[0].id;
+            } else {
+                const existingPersona = await pool.query(
+                    `SELECT id FROM personas WHERE nombre = $1`,
+                    [personaNombre]
+                );
+                personaId = existingPersona.rows[0].id;
+            }
         }
 
         const result = await pool.query(

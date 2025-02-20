@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('gaseosaForm');
     const gaseosasList = document.getElementById('gaseosasItems');
-    const API_URL = 'https://gestor-gaseosas-premium.vercel.app/';
+    const API_URL = 'http://localhost:3000';
     const saborSelect = document.getElementById('sabor');
     const cantidadInput = document.getElementById('cantidad');
     const valorTotalInput = document.getElementById('valorTotal');
