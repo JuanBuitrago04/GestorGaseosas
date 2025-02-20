@@ -85,7 +85,7 @@ app.post('/api/registro', async (req, res) => {
         res.status(201).json(result.rows[0]);
     } catch (err) {
         console.error('❌ Error al registrar:', err);
-        res.status(500).json({ error: 'Error al registrar gaseosa' });
+        res.status(500).json({ error: 'Error al registrar gaseosa', details: err.message });
     }
 });
 
@@ -100,7 +100,7 @@ app.get('/api/consultar', async (req, res) => {
         res.json(result.rows);
     } catch (err) {
         console.error('❌ Error al consultar:', err);
-        res.status(500).json({ error: 'Error al obtener datos' });
+        res.status(500).json({ error: 'Error al obtener datos', details: err.message });
     }
 });
 
@@ -115,7 +115,7 @@ app.delete('/api/eliminar/:id', async (req, res) => {
         res.json({ message: 'Gaseosa eliminada correctamente' });
     } catch (err) {
         console.error('❌ Error al eliminar:', err);
-        res.status(500).json({ error: 'Error al eliminar gaseosa' });
+        res.status(500).json({ error: 'Error al eliminar gaseosa', details: err.message });
     }
 });
 

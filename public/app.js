@@ -109,14 +109,15 @@ document.addEventListener('DOMContentLoaded', () => {
         try {
             const response = await fetch(`${API_URL}/consultar`);
             if (!response.ok) {
-                throw new Error('Network response was not ok');
+                const errorData = await response.json();
+                throw new Error(`Network response was not ok: ${errorData.error}`);
             }
             const gaseosas = await response.json();
             console.log('Gaseosas:', gaseosas);
             renderGaseosas(gaseosas);
         } catch (error) {
             console.error('Error al obtener gaseosas:', error);
-            alert('Error al obtener gaseosas. Verifica que el servidor esté en funcionamiento.');
+            alert(`Error al obtener gaseosas: ${error.message}`);
         }
     }
 
