@@ -11,7 +11,7 @@ body {
 }
 
 .from-fuchsia-500 {
-    --tw-gradient-from: #d946ef;
+    --tw-gradient-from: # ;
     --tw-gradient-stops: var(--tw-gradient-from), var(--tw-gradient-to, rgba(217, 70, 239, 0));
 }
 
@@ -59,17 +59,74 @@ body {
     color: #1f2937; /* Ensure text color is dark */
 }
 
-.container form button {
+/* Ensure text color is black for filter section */
+#filterFecha,
+#filterModoPago,
+#filterSize,
+#filterCantidad,
+#filterEstado {
+    color: black;
+}
+
+.container form button,
+#applyFilters,
+#clearFilters {
     background: #d946ef;
     color: white;
     font-weight: 500;
-    padding: 0.75rem 1rem;
+    padding: 0.5rem 0.75rem; /* Reduce padding */
     border-radius: 0.5rem;
     transition: background-color 0.3s ease;
+    font-size: 0.875rem; /* Reduce font size */
 }
 
-.container form button:hover {
+.container form button:hover,
+#applyFilters:hover,
+#clearFilters:hover {
     background: #c026d3;
+}
+
+/* Styles for the "Aplicar Filtros" button */
+#applyFilters {
+    background: #3b82f6; /* Blue background */
+}
+
+#applyFilters:hover {
+    background: #2563eb; /* Darker blue on hover */
+}
+
+/* Styles for the "Eliminar Filtros" button */
+#clearFilters {
+    background: #ef4444; /* Red background */
+}
+
+#clearFilters:hover {
+    background: #dc2626; /* Darker red on hover */
+}
+
+/* Styles for the "Registrar Gaseosa" button */
+#openConfirmModal {
+    background: #3b82f6; /* Blue background */
+    color: white;
+    font-weight: 500;
+    padding: 0.5rem 0.75rem;
+    border-radius: 0.5rem;
+    transition: background-color 0.3s ease;
+    font-size: 0.875rem;
+}
+
+#openConfirmModal:hover {
+    background: #2563eb; /* Darker blue on hover */
+}
+
+/* Styles for the "Cancelar" buttons */
+button[id*="cancel"] {
+    background: #4b5563; /* Dark gray background */
+    color: white;
+}
+
+button[id*="cancel"]:hover {
+    background: #374151; /* Darker gray on hover */
 }
 
 /* Tabla */
