@@ -92,15 +92,11 @@ app.post('/api/registro', async (req, res) => {
 // Consultar todas las gaseosas
 app.get('/api/consultar', async (req, res) => {
     try {
-        const result = await pool.query(`
-            SELECT g.*, p.nombre as personaNombre 
-            FROM gaseosas g 
-            LEFT JOIN personas p ON g.persona_id = p.id
-        `);
-        res.json(result.rows);
-    } catch (err) {
-        console.error('❌ Error al consultar:', err);
-        res.status(500).json({ error: 'Error al obtener datos', details: err.message });
+        const result = await db.query('SELECT * FROM gaseosas');
+        res.json(result);
+    } catch (error) {
+        console.error('Error al obtener datos:', error);
+        res.status(500).json({ error: 'Error al obtener datos' });
     }
 });
 

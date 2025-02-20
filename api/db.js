@@ -7,8 +7,4 @@ const pool = new Pool({
   }
 });
 
-pool.connect()
-  .then(() => console.log("Conectado a PostgreSQL en Vercel"))
-  .catch(err => console.error("Error de conexión", err));
-
 module.exports = pool;
