@@ -14,7 +14,7 @@ app.use(bodyParser.json());
 async function crearTabla() {
     try {
         await pool.query(`
-             CREATE TABLE IF NOT EXISTS personas (
+            CREATE TABLE IF NOT EXISTS personas (
                 id SERIAL PRIMARY KEY,
                 nombre VARCHAR(100) NOT NULL UNIQUE
             );
@@ -46,7 +46,7 @@ async function crearTabla() {
 crearTabla();
 
 // Registrar gaseosa
-app.post('/registro', async (req, res) => {
+app.post('/api/registro', async (req, res) => {
     let { fechaVenta, sabor, cantidad, valorTotal, estado, modoPago, size, personaNombre } = req.body;
 
     if (!sabor || !cantidad || !valorTotal || !estado || !modoPago || !size) {
@@ -90,7 +90,7 @@ app.post('/registro', async (req, res) => {
 });
 
 // Consultar todas las gaseosas
-app.get('/consultar', async (req, res) => {
+app.get('/api/consultar', async (req, res) => {
     try {
         const result = await pool.query(`
             SELECT g.*, p.nombre as personaNombre 
@@ -105,7 +105,7 @@ app.get('/consultar', async (req, res) => {
 });
 
 // Eliminar una gaseosa
-app.delete('/eliminar/:id', async (req, res) => {
+app.delete('/api/eliminar/:id', async (req, res) => {
     const id = req.params.id;
     try {
         const result = await pool.query('DELETE FROM gaseosas WHERE id = $1 RETURNING *', [id]);
@@ -120,7 +120,7 @@ app.delete('/eliminar/:id', async (req, res) => {
 });
 
 // Actualizar una gaseosa
-app.put('/actualizar/:id', async (req, res) => {
+app.put('/api/actualizar/:id', async (req, res) => {
     const id = req.params.id;
     const { sabor, cantidad, valorTotal, estado, modoPago, size, personaNombre } = req.body;
     try {
