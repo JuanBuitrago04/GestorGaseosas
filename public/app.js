@@ -1,7 +1,7 @@
 document.addEventListener('DOMContentLoaded', () => {
     const form = document.getElementById('gaseosaForm');
     const gaseosasList = document.getElementById('gaseosasItems');
-    const API_URL = 'https://gestor-gaseosas-premium.vercel.app/api'; // Asegúrate de reemplazar 'gestor-gaseosas-premium' con el nombre real de tu proyecto en Vercel
+    const API_URL = 'https://gestor-gaseosas-premium.vercel.app/api';
     const saborSelect = document.getElementById('sabor');
     const cantidadInput = document.getElementById('cantidad');
     const valorTotalInput = document.getElementById('valorTotal');
@@ -171,8 +171,7 @@ document.addEventListener('DOMContentLoaded', () => {
                         data-personaNombre="${gaseosa.personanombre || ''}">
                         <i class="fas fa-edit"></i>
                     </button>
-                </td>
-                <td class="px-6 py-4 whitespace-nowrap text-right text-sm font-medium">
+                    <span class="mx-2"></span>
                     <button class="delete-button text-red-600 hover:text-green-900" data-id="${gaseosa.id}">
                         <i class="fas fa-trash-alt"></i>
                     </button>
