@@ -9,6 +9,15 @@ RegistroGaseosas es una aplicación diseñada para gestionar el inventario y las
 - 📊 Control de inventario.
 - 🧾 Registro de ventas.
 
+## 🏢 Modernización para Microempresa
+Esta aplicación fue desarrollada para modernizar la gestión de una microempresa dedicada a la venta de gaseosas. La implementación de RegistroGaseosas ha proporcionado las siguientes soluciones:
+
+- **Automatización del Inventario:** Permite llevar un control preciso del inventario, evitando pérdidas y mejorando la gestión de stock.
+- **Registro de Ventas:** Facilita el registro de cada venta realizada, proporcionando datos valiosos para análisis y toma de decisiones.
+- **Actualización en Tiempo Real:** La información de las gaseosas puede ser actualizada en tiempo real, asegurando que los datos estén siempre actualizados.
+- **Facilidad de Uso:** La interfaz intuitiva y amigable permite a los empleados de la microempresa utilizar la aplicación sin necesidad de formación extensa.
+- **Acceso Remoto:** Al estar basada en la web, la aplicación puede ser accedida desde cualquier lugar, facilitando la gestión remota del negocio.
+
 ## 🛠️ Tecnologías Utilizadas
 - **Frontend:** HTML, CSS, JavaScript
 - **Backend:** Node.js, Express
@@ -75,4 +84,4 @@ Si deseas contribuir a este proyecto, por favor sigue estos pasos:
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
 ## 📞 Contacto
-Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo a través de [juancamilobuitragohernandez13@gmail.com].
+Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo a través de juancamilobuitragohernandez13@gmail.com.
