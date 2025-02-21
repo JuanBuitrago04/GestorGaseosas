@@ -75,10 +75,15 @@ RegistroGaseosas/
 Aquí puedes ver algunas capturas de pantalla de la aplicación en funcionamiento:
 
 ![Captura de pantalla 2025-02-21 151329](https://github.com/user-attachments/assets/20ad789b-134b-4163-a841-d88393b7f5d1)
+
 ![Captura de pantalla 2025-02-21 151634](https://github.com/user-attachments/assets/031defe1-d7ed-45c0-af4c-ff25453e1976)
+
 ![Captura de pantalla 2025-02-21 151727](https://github.com/user-attachments/assets/78fd1664-c6ca-4f89-92d5-3805913a2abe)
+
 ![Captura de pantalla 2025-02-21 151815](https://github.com/user-attachments/assets/a7db055c-675c-4408-a25f-f883dd75d0ae)
+
 ![Captura de pantalla 2025-02-21 151841](https://github.com/user-attachments/assets/5253c7d0-3e25-4bcb-aac3-efd64b253c39)
+
 ![Captura de pantalla 2025-02-21 152242](https://github.com/user-attachments/assets/866dc097-e6cb-4a5a-9ce5-45284c1b9f6f)
 
 ## 🤝 Contribución
