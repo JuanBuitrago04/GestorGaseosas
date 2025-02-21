@@ -9,6 +9,12 @@ RegistroGaseosas es una aplicación diseñada para gestionar el inventario y las
 - Control de inventario.
 - Registro de ventas.
 
+## Tecnologías Utilizadas
+- **Frontend:** HTML, CSS, JavaScript
+- **Backend:** Node.js, Express
+- **Base de Datos:** MongoDB
+- **Control de Versiones:** Git
+
 ## Instalación
 Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
 
@@ -25,10 +31,35 @@ Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
     npm install
     ```
 
+## Configuración
+1. Crea un archivo `.env` en la raíz del proyecto y añade las siguientes variables de entorno:
+    ```env
+    PORT=3000
+    MONGODB_URI=mongodb://localhost:27017/registroGaseosas
+    ```
+
 ## Uso
 Para iniciar la aplicación, ejecuta el siguiente comando:
 ```bash
 npm start
+```
+La aplicación estará disponible en `http://localhost:3000`.
+
+## Estructura del Proyecto
+```
+RegistroGaseosas/
+├── public/
+│   ├── css/
+│   ├── js/
+│   └── index.html
+├── src/
+│   ├── controllers/
+│   ├── models/
+│   ├── routes/
+│   └── app.js
+├── .env
+├── package.json
+└── README.md
 ```
 
 ## Contribución
