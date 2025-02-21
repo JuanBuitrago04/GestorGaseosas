@@ -71,6 +71,14 @@ RegistroGaseosas/
 └── README.md
 ```
 
+## 📸 Fotos de la Aplicación
+Aquí puedes ver algunas capturas de pantalla de la aplicación en funcionamiento:
+
+![alt text](image-1.png)
+
+![Captura de Pantalla 2](ruta/a/tu/imagen2.png)
+![Captura de Pantalla 3](ruta/a/tu/imagen3.png)
+
 ## 🤝 Contribución
 Si deseas contribuir a este proyecto, por favor sigue estos pasos:
 
