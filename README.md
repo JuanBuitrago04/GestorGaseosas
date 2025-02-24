@@ -80,7 +80,8 @@ Aquí puedes ver algunas capturas de pantalla de la aplicación en funcionamient
 
 ![Captura de pantalla 2025-02-21 151727](https://github.com/user-attachments/assets/78fd1664-c6ca-4f89-92d5-3805913a2abe)
 
-![Captura de pantalla 2025-02-21 151815](https://github.com/user-attachments/assets/a7db055c-675c-4408-a25f-f883dd75d0ae)
+![image](https://github.com/user-attachments/assets/746de416-48fd-466e-b4f9-b7bbb912027a)
+
 
 ![image](https://github.com/user-attachments/assets/55a9f8d2-69be-4735-aa6a-79fe41758227)
 
