@@ -19,9 +19,10 @@ Esta aplicación fue desarrollada para modernizar la gestión de una microempres
 - **Acceso Remoto:** Al estar basada en la web, la aplicación puede ser accedida desde cualquier lugar, facilitando la gestión remota del negocio.
 
 ## 🛠️ Tecnologías Utilizadas
-- **Frontend:** HTML, CSS, JavaScript
+- **Frontend:** HTML, CSS, JavaScript, Tailwind CSS, Font Awesome
 - **Backend:** Node.js, Express
-- **Base de Datos:** MongoDB
+- **Base de Datos:** PostgreSQL
+- **Despliegue:** Vercel
 - **Control de Versiones:** Git
 
 ## 🚀 Instalación
@@ -44,7 +45,7 @@ Para instalar y ejecutar este proyecto localmente, sigue estos pasos:
 1. Crea un archivo `.env` en la raíz del proyecto y añade las siguientes variables de entorno:
     ```env
     PORT=3000
-    MONGODB_URI=mongodb://localhost:27017/registroGaseosas
+    DATABASE_URL=tu_url_de_postgresql
     ```
 
 ## ▶️ Uso
@@ -61,11 +62,11 @@ RegistroGaseosas/
 │   ├── css/
 │   ├── js/
 │   └── index.html
-├── src/
+├── api/
 │   ├── controllers/
-│   ├── models/
+│   ├── db.js
 │   ├── routes/
-│   └── app.js
+│   └── server.js
 ├── .env
 ├── package.json
 └── README.md
@@ -78,14 +79,11 @@ Aquí puedes ver algunas capturas de pantalla de la aplicación en funcionamient
 
 ![image](https://github.com/user-attachments/assets/222e56cd-1007-48d7-8439-fa93a10c148d)
 
-
 ![Captura de pantalla 2025-02-21 151727](https://github.com/user-attachments/assets/78fd1664-c6ca-4f89-92d5-3805913a2abe)
 
 ![image](https://github.com/user-attachments/assets/746de416-48fd-466e-b4f9-b7bbb912027a)
 
-
 ![image](https://github.com/user-attachments/assets/55a9f8d2-69be-4735-aa6a-79fe41758227)
-
 
 ![Captura de pantalla 2025-02-21 152242](https://github.com/user-attachments/assets/866dc097-e6cb-4a5a-9ce5-45284c1b9f6f)
 
@@ -101,5 +99,7 @@ Si deseas contribuir a este proyecto, por favor sigue estos pasos:
 ## 📄 Licencia
 Este proyecto está licenciado bajo la Licencia MIT. Consulta el archivo [LICENSE](LICENSE) para más detalles.
 
-## 📞 Contacto
+##  Contacto
 Si tienes alguna pregunta o sugerencia, no dudes en ponerte en contacto conmigo a través de juancamilobuitragohernandez13@gmail.com.
+
+¡Gracias por usar **Registro de Gaseosas**!
